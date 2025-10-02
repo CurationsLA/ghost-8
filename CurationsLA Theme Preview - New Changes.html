@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///Users/wyattstephens/Desktop/theme-preview.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurationsLA Theme Preview - New Changes</title>
+    <link href="./CurationsLA Theme Preview - New Changes_files/css2" rel="stylesheet">
+    <style>
+        /* Import our new CSS variables */
+        :root {
+          --background: #ffffff;
+          --foreground: #111111;
+          --card: #ffffff;
+          --card-foreground: #111111;
+          --primary: #000000;
+          --primary-foreground: #ffffff;
+          --secondary: #EBF99A;
+          --secondary-foreground: #000000;
+          --accent: #8B5CF6;
+          --accent-foreground: #ffffff;
+          --muted: #f5f5f5;
+          --muted-foreground: #444444;
+          --muted-purple: #faf9ff;
+          --border: #000000;
+          --lime: #EBF99A;
+          --purple: #8B5CF6;
+          --shadow-elev: 0 3px 0 #000;
+          --transition: 0.24s cubic-bezier(0.4, 0.14, 0.2, 1);
+        }
+
+        body {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          line-height: 1.55;
+          margin: 0;
+          padding: 2rem;
+          background: var(--background);
+          color: var(--foreground);
+        }
+
+        .preview-section {
+          margin: 3rem 0;
+          padding: 2rem;
+          border: 2px solid var(--border);
+          background: white;
+        }
+
+        .preview-title {
+          font-size: 1.5rem;
+          font-weight: 900;
+          margin-bottom: 1rem;
+          color: var(--accent);
+        }
+
+        /* H3 with Purple Vertical Bar - NEW CHANGE */
+        .h3-preview {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          border-left: 4px solid var(--accent);
+          padding-left: 1rem;
+          background: none;
+          font-weight: 400;
+          color: #000;
+          line-height: 1.55;
+        }
+
+        .h3-preview .location-tag {
+          background: var(--lime);
+          color: #000;
+          padding: 2px 6px;
+          border: 2px solid #000;
+          font-weight: 900;
+          font-size: 0.65rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        /* New Article List Layout */
+        .latest-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          margin: 0 0 2rem;
+          border: 3px solid var(--border);
+          box-shadow: var(--shadow-elev);
+          background: var(--background);
+        }
+
+        .latest-item {
+          background: var(--background);
+          border-bottom: 2px solid var(--border);
+          position: relative;
+          transition: background 0.15s ease;
+          margin: 0;
+        }
+
+        .latest-item:last-child {
+          border-bottom: none;
+        }
+
+        .latest-item:nth-child(odd) {
+          background: var(--muted-purple);
+        }
+
+        .latest-item:hover {
+          background: var(--secondary);
+        }
+
+        .latest-item-content {
+          padding: 1.25rem 1.5rem;
+          display: block;
+        }
+
+        .latest-item-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .latest-item-tag {
+          background: var(--accent);
+          color: #ffffff;
+          border: 2px solid var(--border);
+          font-weight: 900;
+          font-size: 0.65rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          padding: 2px 6px;
+          border-radius: 0;
+        }
+
+        .latest-item-date {
+          font-size: 0.75rem;
+          color: var(--muted-foreground);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .latest-item-title {
+          font-size: 1rem;
+          font-weight: 800;
+          line-height: 1.3;
+          margin-bottom: 0.5rem;
+          color: var(--foreground);
+        }
+
+        .latest-item-title a {
+          color: inherit;
+          text-decoration: none;
+          transition: var(--transition);
+        }
+
+        .latest-item-title a:hover {
+          color: var(--primary);
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 3px;
+        }
+
+        .latest-item-excerpt {
+          font-size: 0.875rem;
+          line-height: 1.5;
+          color: var(--muted-foreground);
+          margin-bottom: 0.75rem;
+        }
+
+        .latest-item-meta {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .latest-item-meta a {
+          color: var(--foreground);
+          font-weight: 900;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          transition: var(--transition);
+          text-decoration: none;
+        }
+
+        .latest-item-meta a:hover {
+          color: var(--primary);
+          transform: translateX(3px);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 CurationsLA Theme Changes Preview</h1>
+    
+    <div class="preview-section">
+        <div class="preview-title">🔥 NEW: Purple Vertical Bar on H3 Headers</div>
+        <h3 class="h3-preview">
+            <span class="location-tag">CURATIONS</span>
+            <span>Purple vertical bar instead of pink - Rich purple #8B5CF6</span>
+        </h3>
+        <p>All H3 elements now use the rich purple accent color for the vertical border instead of the previous pink.</p>
+    </div>
+
+    <div class="preview-section">
+        <div class="preview-title">🆕 NEW: Purple Content Tags with White Text</div>
+        <div class="latest-list">
+            <article class="latest-item">
+                <div class="latest-item-content">
+                    <div class="latest-item-header">
+                        <span class="latest-item-tag">🤙 NEWSLETTERS</span>
+                        <time class="latest-item-date">JAN 2, 2025</time>
+                    </div>
+                    <h4 class="latest-item-title">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#">Good Vibes Weekly: Silver Lake Coffee Culture</a>
+                    </h4>
+                    <p class="latest-item-excerpt">Purple tags with pure white text create better contrast and match our brand aesthetic perfectly.</p>
+                    <div class="latest-item-meta">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#"><span>MORE</span> <span>→</span></a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="latest-item">
+                <div class="latest-item-content">
+                    <div class="latest-item-header">
+                        <span class="latest-item-tag">🍟 EATS</span>
+                        <time class="latest-item-date">JAN 1, 2025</time>
+                    </div>
+                    <h4 class="latest-item-title">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#">Echo Park's Hidden Food Gems</a>
+                    </h4>
+                    <p class="latest-item-excerpt">The rich purple background (#8B5CF6) with white text provides excellent readability and visual hierarchy.</p>
+                    <div class="latest-item-meta">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#"><span>MORE</span> <span>→</span></a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="latest-item">
+                <div class="latest-item-content">
+                    <div class="latest-item-header">
+                        <span class="latest-item-tag">📆 EVENTS</span>
+                        <time class="latest-item-date">DEC 31, 2024</time>
+                    </div>
+                    <h4 class="latest-item-title">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#">Los Feliz Weekend Market Returns</a>
+                    </h4>
+                    <p class="latest-item-excerpt">Consistent branding with purple tags matching our H3 vertical bars and accent color throughout the theme.</p>
+                    <div class="latest-item-meta">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#"><span>MORE</span> <span>→</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="latest-item">
+                <div class="latest-item-content">
+                    <div class="latest-item-header">
+                        <span class="latest-item-tag">👋 CURATORS</span>
+                        <time class="latest-item-date">DEC 30, 2024</time>
+                    </div>
+                    <h4 class="latest-item-title">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#">Meet the Community Curators</a>
+                    </h4>
+                    <p class="latest-item-excerpt">Beautiful purple tags with white text create a cohesive visual experience across all content categories.</p>
+                    <div class="latest-item-meta">
+                        <a href="file:///Users/wyattstephens/Desktop/theme-preview.html#"><span>MORE</span> <span>→</span></a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="preview-section">
+        <div class="preview-title">🎨 Key Visual Changes Made</div>
+        <ul>
+            <li><strong>Purple Vertical Bars:</strong> All H3 elements now use rich purple (#8B5CF6) instead of pink</li>
+            <li><strong>🆕 Purple Content Tags:</strong> Article tags now have purple background with pure white text</li>
+            <li><strong>New CSS Variables:</strong> Updated color system with better semantic naming</li>
+            <li><strong>List-Based Layout:</strong> Alternating row backgrounds with purple tint (#faf9ff)</li>
+            <li><strong>Enhanced Typography:</strong> Preserved Inter font family throughout</li>
+            <li><strong>Improved Hover States:</strong> Lime green (#EBF99A) hover backgrounds</li>
+            <li><strong>Consistent Branding:</strong> Purple accent color (#8B5CF6) used throughout theme</li>
+            <li><strong>Ghost 6.0 Compatible:</strong> All changes maintain Ghost theme requirements</li>
+        </ul>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: var(--muted); border-left: 4px solid var(--accent);">
+            <strong>🎯 Latest Change:</strong> Content tags now feature rich purple backgrounds with pure white text for better contrast and brand consistency. This creates a cohesive visual experience that matches our purple vertical bars and overall theme aesthetic.
+        </div>
+    </div>
+
+</body></html>
