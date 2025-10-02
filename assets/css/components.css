@@ -1,8 +1,8 @@
 .nav-list{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;}
-.nav-list a{display:flex;align-items:center;gap:.45rem;font-weight:800;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;padding:.58rem .82rem .55rem;border:2px solid #000;background:#fff;line-height:1;box-shadow:0 2px 0 #000;transition:transform var(--transition),background var(--transition),box-shadow var(--transition);}
+.nav-list a{display:flex;align-items:center;gap:.45rem;font-family:var(--font);font-weight:800;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;padding:.58rem .82rem .55rem;border:2px solid #000;background:#fff;line-height:1;box-shadow:0 2px 0 #000;transition:transform var(--transition),background var(--transition),box-shadow var(--transition);}
 .nav-list a:hover{background:var(--lime);transform:translateY(-3px);box-shadow:0 5px 0 #000;}
 .nav-subscribe{background:var(--lime);}
-.mobile-menu-toggle{display:none;border:2px solid #000;background:var(--lime);font-weight:800;font-size:1rem;padding:.55rem .85rem;cursor:pointer;line-height:1;box-shadow:0 2px 0 #000;}
+.mobile-menu-toggle{display:none;border:2px solid #000;background:var(--lime);font-family:var(--font);font-weight:800;font-size:1rem;padding:.55rem .85rem;cursor:pointer;line-height:1;box-shadow:0 2px 0 #000;}
 
 @media (max-width:900px){
   .mobile-menu-toggle{display:block;}
@@ -12,15 +12,10 @@
   .nav-list a{width:100%;justify-content:flex-start;}
 }
 
-.latest-list{display:flex;flex-direction:column;gap:1.9rem;margin-bottom:2.75rem;}
-.latest-item{border:2px solid #000;box-shadow:0 3px 0 #000;padding:0;margin-bottom:1.5rem;background:#fff;position:relative;transition:background var(--transition),transform var(--transition),box-shadow var(--transition);}
-.latest-item:before{content:"";position:absolute;inset:0;border:2px solid var(--lime);opacity:.9;mix-blend-mode:multiply;pointer-events:none;}
-.latest-item:hover{background:var(--lime);transform:translateY(-4px);box-shadow:0 6px 0 #000;}
-.latest-item-content{padding:1.2rem;}
-.latest-item-header{display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;}
+/* Article list styles moved to article-mastery.css for centralized control */
 .latest-item-title{margin:0 0 .75rem;font-size:1.34rem;line-height:1.22;font-weight:900;letter-spacing:0.5px;background:var(--lime);color:#000;padding:.75rem;border:1px solid #000;box-shadow:0 1px 0 #000;text-transform:uppercase;}
 .latest-item-title a{background:transparent !important;color:#000 !important;text-transform:uppercase;text-decoration:none !important;}
-.latest-item-tag{background:#F4C2F1;color:#000;padding:3px 8px 4px;border:1px solid #000;font-weight:700;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:0.25rem;order:1;}
+.latest-item-tag{background:#8B5CF6;color:#ffffff;padding:3px 8px 4px;border:2px solid #000;font-weight:900;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:0.25rem;order:1;}
 .latest-item-date{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#666;order:2;margin-left:auto;}
 .latest-item-excerpt{background:#fff;padding:0;margin:0;font-size:0.9rem;line-height:1.4;border:none;box-shadow:none;}
 .pagination{display:flex;justify-content:center;gap:.85rem;margin:2rem 0 3.5rem;list-style:none;padding:0;flex-wrap:wrap;}
@@ -48,11 +43,11 @@
 .latest-item-title{margin:0 0 .75rem;font-size:1.34rem;line-height:1.22;font-weight:900;letter-spacing:-.35px;background:var(--lime);color:#000;padding:.5rem .75rem;border:1px solid #000;box-shadow:0 1px 0 #000;text-transform:uppercase;}
 .latest-item-title a{background:transparent !important;color:#000 !important;text-transform:uppercase;}
 .latest-item-excerpt{border:1px solid #000;background:#fff;padding:.75rem;margin:.5rem 0 0 0;font-size:.9rem;line-height:1.4;box-shadow:0 1px 0 #ddd;}
-.latest-item-tag{background:#F4C2F1;color:#000;padding:3px 8px 4px;border:1px solid #000;font-weight:700;font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;display:inline-flex;align-items:center;gap:.25rem;box-shadow:0 1px 0 #000;}
+.latest-item-tag{background:#8B5CF6;color:#ffffff;padding:3px 8px 4px;border:2px solid #000;font-weight:900;font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;display:inline-flex;align-items:center;gap:.25rem;box-shadow:0 1px 0 #000;}
 .post-content a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: var(--pink);
+  text-decoration-color: var(--purple);
   text-underline-offset: 2px;
   font-weight: inherit;
   background: none;
@@ -61,9 +56,9 @@
 .green-highlight-link{background:linear-gradient(transparent 60%, var(--lime) 60%);padding:0 2px;color:#000;text-decoration:none;font-weight:600;}
 .green-highlight-link:hover{background:var(--lime);text-decoration:underline;}
 .pink-highlight-link {
-  color: var(--pink);
+  color: var(--purple);
   text-decoration: underline;
-  text-decoration-color: var(--pink);
+  text-decoration-color: var(--purple);
   text-underline-offset: 2px;
   font-weight: 600;
   background: none;
@@ -71,9 +66,9 @@
 }
 
 .pink-highlight-link:hover {
-  color: var(--pink);
+  color: var(--purple);
   text-decoration: underline;
-  text-decoration-color: var(--pink);
+  text-decoration-color: var(--purple);
 }
 
 .vf-search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:1200;display:flex;justify-content:center;align-items:flex-start;padding:6vh 1rem;overflow-y:auto;}
@@ -90,14 +85,14 @@
  * </h3>
  * 
  * Components:
- * - Pink vertical bar (automatic)
+ * - Purple vertical bar (automatic)
  * - Green highlighted location/category tag
  * - Emoji based on content type
  * - Bold uppercase headline text
  * - All elements display on same row
  */
 .section-heading { 
-  border-left: 4px solid var(--pink); 
+  border-left: 4px solid var(--purple); 
   padding-left: .8rem; 
   display: flex; 
   align-items: center; 
@@ -130,9 +125,9 @@
 }
 
 .pink-highlight-link { 
-  color: var(--pink);
+  color: var(--purple);
   text-decoration: underline; 
-  text-decoration-color: var(--pink); 
+  text-decoration-color: var(--purple); 
   text-underline-offset: 2px; 
   font-weight: 600;
   background: none;

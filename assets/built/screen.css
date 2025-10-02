@@ -1,13 +1,15 @@
 @import "section-card.css";
+@import "homepage-enhanced.css";
+@import "article-mastery.css";
 
-/* CurationsLA Theme v7.0.0 - Enhanced Newsletter Design
-   Added lime green table headers, mobile responsive tables, and improved newsletter styling */
-:root { --lime:#EBF99A; --lime-strong:#EBF99A; --lime-line:#EBF99A; --pink:#F99AEB; --purple:#8B5CF6; --text:#111; --text-soft:#444; --bg:#ffffff; --font:'Inter',-apple-system,BlinkMacSystemFont,'Segue UI',sans-serif; --radius-s:0; --transition:.24s cubic-bezier(.4,.14,.2,1); --max-width:1140px; --content-max:820px; --content-inner:680px; --shadow-elev:0 3px 0 #000; }
+/* CurationsLA Theme v8.2.0 - Enhanced Newsletter Design with Masterful Article Lists
+   Weather widget removed, pure content excellence with enhanced homepage experience */
+:root { --lime:#EBF99A; --lime-strong:#EBF99A; --lime-line:#EBF99A; --pink:#8B5CF6; --purple:#8B5CF6; --text:#111; --text-soft:#444; --bg:#ffffff; --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; --gh-font-heading:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; --gh-font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; --radius-s:0; --transition:.24s cubic-bezier(.4,.14,.2,1); --max-width:1140px; --content-max:820px; --content-inner:680px; --shadow-elev:0 3px 0 #000; }
 *,*::before,*::after{box-sizing:border-box;} html{font-size:16px;-webkit-text-size-adjust:100%;}
 body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;}
 img,svg,video{max-width:100%;height:auto;display:block;} a{color:var(--text);text-decoration:inherit;transition:color var(--transition),background var(--transition);}
 p{margin:0 0 1.15rem;} h1,h2,h3,h4,h5{margin:0 0 .75rem;font-weight:800;line-height:1.15;letter-spacing:-.5px;}
-/* Updated h3 styling - section heading style with pink vertical bar, paragraph-sized font, bold, small green box for first words, emoji, then regular bold font */
+/* Updated h3 styling - section heading style with purple vertical bar, paragraph-sized font, bold, small green box for first words, emoji, then regular bold font */
 h3 {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -174,8 +176,8 @@ mark,::selection{background:var(--lime);color:#000;padding:0 2px;}
 
 /* Enhanced category tags - all uppercase */
 .latest-item-tag {
-  background: var(--purple);
-  color: #ffffff;
+  background: #F4C2F1;
+  color: #000;
   padding: 3px 8px 4px;
   border: 1px solid #000;
   font-weight: 700;
@@ -724,7 +726,7 @@ mark,::selection{background:var(--lime);color:#000;padding:0 2px;}
   }
 }
 
-/* Newsletter Article Enhancements with lime green highlights and pink bars */
+/* Newsletter Article Enhancements with lime green highlights and purple bars */
 .newsletter-article{--newsletter-spacing:1.2rem;--section-gap:2.4rem;}
 
 /* Newsletter highlight styling - matching web posts */
@@ -734,7 +736,7 @@ mark,::selection{background:var(--lime);color:#000;padding:0 2px;}
   padding: 0 2px;
 }
 
-/* Newsletter H3 headings with pink vertical bars - matching web posts */
+/* Newsletter H3 headings with purple vertical bars - matching web posts */
 .newsletter-article h3 {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -1004,7 +1006,7 @@ mark,::selection{background:var(--lime);color:#000;padding:0 2px;}
     color: #333;
 }
 
-/* Pink highlight links - underline only, no pink color */
+/* Purple highlight links - underline only, purple color */
 .pink-highlight-link {
   color: inherit;
   text-decoration: underline;
@@ -1065,8 +1067,8 @@ mark,::selection{background:var(--lime);color:#000;padding:0 2px;}
 
 /* Enhanced category tags with purple background - moved to left */
 .latest-item-tag {
-  background: var(--purple);
-  color: #ffffff;
+  background: #F4C2F1;
+  color: #000;
   padding: 3px 8px 4px;
   border: 1px solid #000;
   font-weight: 700;
@@ -1108,7 +1110,6 @@ mark,::selection{background:var(--lime);color:#000;padding:0 2px;}
 .latest-item-title a {
   background: transparent !important;
   color: #000 !important;
-  text-decoration: none !important;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -1123,13 +1124,10 @@ mark,::selection{background:var(--lime);color:#000;padding:0 2px;}
   border: none;
   box-shadow: none;
 }
-  gap: 0.25rem;
-  box-shadow: 0 1px 0 #000;
-}
 
 /* Remove old section-heading class since it's now part of h3 */
 
-/* Enhanced link styling for pages, posts, and newsletters - always visible pink underlines */
+/* Enhanced link styling for pages, posts, and newsletters - always visible purple underlines */
 /* Ultra-specific selectors to override base.css a{text-decoration:none;} */
 .post-content a,
 .post-content a:link,
@@ -1158,7 +1156,7 @@ article a:visited,
   text-decoration-style: solid !important;
   text-underline-offset: 2px !important;
   text-decoration-thickness: 2px !important;
-  -webkit-text-decoration: underline var(--pink) 2px !important;
+  -webkit-text-decoration: underline var(--purple) 2px !important;
   font-weight: inherit;
   background: none !important;
   padding: 0;
@@ -1177,7 +1175,7 @@ article a:hover,
   text-decoration-style: solid !important;
   text-decoration-thickness: 3px !important;
   text-underline-offset: 1px !important;
-  -webkit-text-decoration: underline var(--pink) 3px !important;
+  -webkit-text-decoration: underline var(--purple) 3px !important;
 }
 
 /* Homepage links remain unchanged - no underlines */
@@ -1275,7 +1273,7 @@ a[name]::after, a[id]::after {
   box-shadow: none;
 }
 
-/* CRITICAL FIX: Pink hyperlink underlines - MUST display by default on all pages/posts/newsletters */
+/* CRITICAL FIX: Purple hyperlink underlines - MUST display by default on all pages/posts/newsletters */
 /* This MUST be at the end of CSS to override ALL other rules including base.css */
 /* Homepage links are explicitly excluded below */
 
@@ -1299,13 +1297,14 @@ article a:any-link,
 .kg-width-wide a,
 .kg-width-full a {
   text-decoration: underline !important;
-  text-decoration-color: #F99AEB !important;
+  text-decoration-color: #8B5CF6 !important;
   text-decoration-color: var(--purple) !important;
   text-decoration-style: solid !important;
   text-decoration-thickness: 2px !important;
   text-underline-offset: 2px !important;
+  text-decoration-line: underline !important;
   -webkit-text-decoration-line: underline !important;
-  -webkit-text-decoration-color: #F99AEB !important;
+  -webkit-text-decoration-color: #8B5CF6 !important;
   -webkit-text-decoration-style: solid !important;
   -webkit-text-decoration-thickness: 2px !important;
   color: inherit !important;
@@ -1326,7 +1325,7 @@ article.page a:hover,
 .kg-width-wide a:hover,
 .kg-width-full a:hover {
   text-decoration: underline !important;
-  text-decoration-color: #F99AEB !important;
+  text-decoration-color: #8B5CF6 !important;
   text-decoration-color: var(--purple) !important;
   text-decoration-thickness: 3px !important;
   text-underline-offset: 1px !important;

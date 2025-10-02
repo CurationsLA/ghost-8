@@ -1,8 +1,9 @@
 :root {
+  --purple:#8B5CF6;
   --lime:#EBF99A;
   --lime-strong:#EBF99A;
   --lime-line:#EBF99A;
-  --pink:#F99AEB;
+  --pink:#8B5CF6; /* Deprecated: Use --purple instead */
   --black:#000;
   --text:#111;
   --text-soft:#444;

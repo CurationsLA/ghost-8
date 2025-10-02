@@ -205,12 +205,12 @@
 
 /* Enhanced focus states for accessibility */
 .nav-button:focus {
-  outline: 3px solid var(--pink, #F99AEB);
+  outline: 3px solid var(--purple, #8B5CF6);
   outline-offset: 2px;
 }
 
 .more-link:focus {
-  outline: 3px solid var(--pink, #F99AEB);
+  outline: 3px solid var(--purple, #8B5CF6);
   outline-offset: 2px;
 }
 
@@ -219,21 +219,6 @@
   .post-navigation {
     display: none;
   }
-}
-  align-items: center;
-  gap: 0.5rem;
-  background: #000;
-  color: #fff;
-  padding: 10px 16px 12px;
-  border: 2px solid #000;
-  text-decoration: none;
-  font-family: var(--font-mono, 'Courier New', monospace);
-  font-weight: 900;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 0 #666;
 }
 
 .nav-button:hover {
@@ -354,8 +339,8 @@
 }
 
 .featured-tag {
-  background: var(--pink, #F99AEB);
-  color: #000;
+  background: var(--purple, #8B5CF6);
+  color: #fff;
   padding: 3px 8px 4px;
   border: 2px solid #000;
   font-weight: 900;
@@ -394,7 +379,7 @@
 }
 
 .featured-title a:hover {
-  color: var(--pink, #F99AEB);
+  color: var(--purple, #8B5CF6);
 }
 
 .featured-excerpt {
@@ -438,8 +423,8 @@
 }
 
 .filter-btn.active {
-  background: var(--pink, #F99AEB);
-  color: #000;
+  background: var(--purple, #8B5CF6);
+  color: #fff;
 }
 
 .filter-emoji {
@@ -450,173 +435,9 @@
   font-size: inherit;
 }
 
-/* Enhanced Latest Articles */
-.latest-list {
-  display: grid;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.latest-item {
-  background: #fff;
-  border: 2px solid #000;
-  box-shadow: 0 3px 0 #000;
-  position: relative;
-  transition: all 0.2s ease;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.latest-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.latest-item:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--lime, #EBF99A);
-  opacity: 0.9;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
-.latest-item:hover {
-  background: var(--lime, #EBF99A);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 0 #000;
-}
-
-.latest-item-content {
-  padding: 1.25rem;
-}
-
-.latest-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.latest-item-tag {
-  background: #F4C2F1;
-  color: #000;
-  padding: 3px 8px 4px;
-  border: 1px solid #000;
-  font-weight: 700;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  box-shadow: 0 1px 0 #000;
-}
-
-.latest-item-tag[data-tag="newsletters"] { background: #E8F5E8; }
-.latest-item-tag[data-tag="eats"] { background: #FFF3E0; }
-.latest-item-tag[data-tag="events"] { background: #E3F2FD; }
-.latest-item-tag[data-tag="curators"] { background: #F3E5F5; }
-.latest-item-tag[data-tag="news"] { background: #FFEBEE; }
-.latest-item-tag[data-tag="culture"] { background: #F9FBE7; }
-
-.latest-item-date {
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #666;
-}
-
-.latest-item-image {
-  margin: 0 -1.25rem 1rem;
-  height: 180px;
-  overflow: hidden;
-}
-
-.latest-item-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.latest-item:hover .latest-item-image img {
-  transform: scale(1.02);
-}
-
-.latest-item-title {
-  margin: 0 0 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1.25;
-  font-weight: 900;
-  letter-spacing: -0.35px;
-}
-
-.latest-item-title a {
-  color: #000;
-  text-decoration: none;
-  text-transform: none;
-  background: none;
-}
-
-.latest-item-title a:hover {
-  color: var(--pink, #F99AEB);
-}
-
-.latest-item-excerpt {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #555;
-  margin: 0 0 1rem;
-}
-
-.latest-item-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid #eee;
-  flex-wrap: wrap;
-}
-
-.article-author {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  color: #666;
-  font-weight: 600;
-}
-
-.author-avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid #ddd;
-  object-fit: cover;
-}
-
-.author-name {
-  font-weight: 700;
-}
-
-.reading-time {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.7rem;
-  color: #888;
-  font-weight: 600;
-}
-
-.reading-icon {
-  font-size: 0.9em;
-}
+/* Enhanced Latest Articles - Styles removed, using Universal Article List from article-mastery.css */
+/* The default homepage now uses the brutalist list layout with purple tints and lime hovers */
+/* Article list specific animations and enhancements for homepage */
 
 /* Newsletter CTA Section */
 .newsletter-cta {
@@ -696,8 +517,8 @@
 }
 
 .cta-button:hover {
-  background: var(--pink, #F99AEB);
-  color: #000;
+  background: var(--purple, #8B5CF6);
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 5px 0 #333;
 }
