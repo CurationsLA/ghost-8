@@ -1,6 +1,7 @@
 @import "section-card.css";
 @import "homepage-enhanced.css";
 @import "article-mastery.css";
+@import "purple-enhancements.css";
 
 /* CurationsLA Theme v8.2.0 - Enhanced Newsletter Design with Masterful Article Lists
    Weather widget removed, pure content excellence with enhanced homepage experience */
@@ -9,25 +10,8 @@
 body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;}
 img,svg,video{max-width:100%;height:auto;display:block;} a{color:var(--text);text-decoration:inherit;transition:color var(--transition),background var(--transition);}
 p{margin:0 0 1.15rem;} h1,h2,h3,h4,h5{margin:0 0 .75rem;font-weight:800;line-height:1.15;letter-spacing:-.5px;}
-/* Updated h3 styling - section heading style with pink vertical bar, paragraph-sized font, bold, small green box for first words, emoji, then regular bold font */
-h3 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-left: 4px solid var(--pink);
-  padding-left: 1rem;
-  background: none;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  box-shadow: none;
-  text-align: left;
-  font-weight: 400;
-  color: #000;
-  line-height: 1.55;
-}
+/* Updated h3 styling - section heading style with PURPLE vertical bar */
+/* Note: Full H3 styling moved to purple-enhancements.css for better organization */
 
 h3 .location-tag {
   background: var(--lime);

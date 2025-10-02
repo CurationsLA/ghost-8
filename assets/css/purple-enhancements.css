@@ -1,0 +1,75 @@
+/* 🔥 PURPLE ENHANCEMENTS - CurationsLA v8.2.0 */
+
+/* Enhanced CSS Variables with Purple */
+:root {
+  --accent: #8B5CF6; /* Rich purple for accents */
+  --accent-foreground: #ffffff;
+  --muted-purple: #faf9ff;
+  --purple: #8B5CF6;
+}
+
+/* 🔥 NEW: Purple Vertical Bar on H3 Headers */
+h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-left: 4px solid var(--accent); /* Changed from --pink to --accent (purple) */
+  padding-left: 1rem;
+  background: none;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.55;
+}
+
+/* 🆕 NEW: Purple Content Tags with White Text */
+.content-tag,
+.post-tag,
+.latest-item-tag,
+.article-tag {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--text) !important;
+  font-weight: 900;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 0;
+  display: inline-block;
+}
+
+/* Enhanced Article List with Purple Accents */
+.latest-item:nth-child(odd) {
+  background: var(--muted-purple);
+}
+
+.latest-item-tag {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Tag links in posts */
+.post-tags a,
+.tag-link {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--text);
+  padding: 2px 6px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin: 0 4px 4px 0;
+  transition: var(--transition);
+}
+
+.post-tags a:hover,
+.tag-link:hover {
+  background: var(--text) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
