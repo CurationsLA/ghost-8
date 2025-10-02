@@ -1,0 +1,53 @@
+.container{max-width:var(--max-width);margin:0 auto;padding:0 1.4rem;}
+.flex{display:flex;align-items:center;}
+.gh-viewport{min-height:100vh;display:flex;flex-direction:column;}
+.site-main{flex:1 0 auto;}
+
+.site-header{background:#fff;border-bottom:4px solid var(--lime-line);position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,.06);}
+.header-inner{justify-content:space-between;min-height:74px;padding:4px 0;gap:1rem;}
+
+/* Enhanced Header with Logo Indentation */
+.header-inner.header-indented {
+  padding-left: 1rem;
+}
+
+.logo{font-weight:900;font-size:1.55rem;letter-spacing:-1px;display:inline-flex;align-items:baseline;gap:.35rem;color:#000;text-decoration:none;}
+
+/* Logo indentation for better spacing */
+.logo.logo-indented {
+  margin-left: 0.5rem;
+}
+
+.logo-accent{font-weight:900;background:var(--lime);padding:2px 6px 3px;box-shadow:0 0 0 2px #000 inset;}
+
+/* Responsive header indentation */
+@media (min-width: 768px) {
+  .header-inner.header-indented {
+    padding-left: 1.5rem;
+  }
+  
+  .logo.logo-indented {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-inner.header-indented {
+    padding-left: 0.5rem;
+  }
+  
+  .logo.logo-indented {
+    margin-left: 0.25rem;
+  }
+}
+
+.site-footer{background:#111;color:#eee;margin-top:4rem;padding:2.75rem 0 3.2rem;font-size:.78rem;position:relative;}
+.site-footer a{color:var(--lime);font-weight:600;}
+.footer-nav{list-style:none;display:flex;flex-wrap:wrap;gap:.85rem 1.4rem;margin:0 0 1.25rem;padding:0;}
+.universal-footer-tagline{margin:1.6rem 0 0;font-size:.62rem;letter-spacing:.16em;font-weight:800;text-transform:uppercase;line-height:1.55;text-align:center;}
+.uf-brand-pill{display:inline-block;background:#353839;color:#fff;padding:.25rem .55rem .22rem;border:2px solid #353839;font-weight:800;letter-spacing:.08em;box-shadow:0 2px 0 #000;text-decoration:none;}
+.uf-brand-pill:hover{background:var(--lime);color:#000;border-color:#000;}
+
+.back-to-top-btn{position:absolute;right:1.2rem;bottom:1.2rem;border:2px solid #000;background:#fff;color:#000;font-weight:900;font-size:.9rem;line-height:1;padding:.6rem .8rem;cursor:pointer;box-shadow:0 2px 0 #000;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;}
+.back-to-top-btn.visible{opacity:1;transform:translateY(0);}
+.back-to-top-btn:hover{background:var(--lime);transform:translateY(-3px);box-shadow:0 5px 0 #000;}

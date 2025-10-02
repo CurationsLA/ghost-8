@@ -1,0 +1,30 @@
+<div class="c-section-card">
+  <h2 class="c-section-card__header">
+    <span class="c-section-card__emoji">🍟</span>
+    <span class="c-section-card__title">EATS</span>
+  </h2>
+  <div class="c-section-card__body">
+    <p>This is where the main content for the EATS section will go. You can add restaurant reviews, food news, or anything else here.</p>
+    <p>Here is some example content:</p>
+    <h4>A new taco spot just opened in Silver Lake!</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  {{#if eats_links}}
+    <div class="c-section-card__links">
+      <table class="c-link-table">
+        <thead>
+          <tr>
+            <th>EATS LINKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#foreach eats_links}}
+            <tr>
+              <td><a href="{{url}}">{{title}}</a></td>
+            </tr>
+          {{/foreach}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
+</div>

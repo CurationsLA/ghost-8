@@ -1,0 +1,27 @@
+<div class="c-section-card">
+  <h2 class="c-section-card__header">
+    <span class="c-section-card__emoji">🏗️</span>
+    <span class="c-section-card__title">DEVELOPMENT</span>
+  </h2>
+  <div class="c-section-card__body">
+    <p>Insert DEVELOPMENT content here.</p>
+  </div>
+  {{#if development_links}}
+    <div class="c-section-card__links">
+      <table class="c-link-table">
+        <thead>
+          <tr>
+            <th>DEVELOPMENT LINKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#foreach development_links}}
+            <tr>
+              <td><a href="{{url}}">{{title}}</a></td>
+            </tr>
+          {{/foreach}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
+</div>

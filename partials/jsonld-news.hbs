@@ -1,0 +1,75 @@
+{{!-- JSON-LD Structured Data --}}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"{{@site.title}}",
+  "url":"{{@site.url}}",
+  "logo":"{{@site.url}}/content/images/size/w256h256/logo.png",
+  "sameAs":["{{@site.url}}"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "url":"{{@site.url}}",
+  "name":"{{@site.title}}",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"{{@site.url}}/?s={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+
+{{#post}}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"NewsArticle",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"{{url absolute="true"}}"
+  },
+  "headline":"{{title}}",
+  "articleSection":{{#if primary_tag}}"{{primary_tag.slug}}"{{else}}"general"{{/if}},
+  "datePublished":"{{date published_at format="YYYY-MM-DDTHH:mm:ss.SSSZ"}}",
+  "dateModified":"{{date updated_at format="YYYY-MM-DDTHH:mm:ss.SSSZ"}}",
+  "author":[
+    {{#foreach authors}}
+    {
+      "@type":"Person",
+      "name":"{{name}}",
+      "url":"{{url absolute="true"}}"
+    }{{#unless @last}},{{/unless}}
+    {{/foreach}}
+  ],
+  "publisher":{
+    "@type":"Organization",
+    "name":"{{@site.title}}",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"{{@site.url}}/content/images/size/w256h256/logo.png"
+    }
+  }{{#if feature_image}},
+  "image":["{{img_url feature_image size="xl" absolute="true"}}"]{{/if}},
+  "description":"{{excerpt words="40"}}"
+}
+</script>
+
+{{#if primary_tag}}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"{{@site.url}}"},
+    {"@type":"ListItem","position":2,"name":"{{primary_tag.name}}","item":"{{primary_tag.url}}"},
+    {"@type":"ListItem","position":3,"name":"{{title}}","item":"{{url absolute="true"}}"}
+  ]
+}
+</script>
+{{/if}}
+{{/post}}

@@ -1,0 +1,4 @@
+/* Optional styling if you create a web "preview" page of the email brief */
+.newsletter-article .post-full-title{font-size:2rem;}
+.newsletter-article table{border-collapse:collapse;width:100%;margin:1rem 0;}
+.newsletter-article a{text-decoration:none;color:#000;background:linear-gradient(transparent 70%, var(--lime) 70%);}

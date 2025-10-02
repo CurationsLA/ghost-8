@@ -1,0 +1,167 @@
+{{!< default}}
+
+<main class="site-main tag-main">
+  <section class="home-section home-latest">
+    <header class="section-header tag-header">
+      <h2 class="section-title section-title--lc">
+        <span class="section-emoji">
+          {{#match tag.slug "newsletters"}}🤙{{/match}}
+          {{#match tag.slug "eats"}}🍟{{/match}}
+          {{#match tag.slug "events"}}📆{{/match}}
+          {{#match tag.slug "curators"}}👋{{/match}}
+          {{#match tag.slug "news"}}📰{{/match}}
+          {{#match tag.slug "culture"}}🎭{{/match}}
+          {{#match tag.slug "business"}}💼{{/match}}
+          {{#match tag.slug "community"}}🏘️{{/match}}
+          {{#match tag.slug "entertainment"}}🎪{{/match}}
+          {{#match tag.slug "health"}}💚{{/match}}
+          {{#match tag.slug "tech"}}💻{{/match}}
+          {{#match tag.slug "art"}}🎨{{/match}}
+          {{#unless tag.slug}}📁{{/unless}}
+        </span>
+        <span class="location-tag">{{tag.name}}</span>
+      </h2>
+      <div class="section-rule"></div>
+    </header>
+
+    <div class="latest-list">
+      {{#foreach posts}}
+        <article class="latest-item {{post_class}}" itemscope itemtype="https://schema.org/NewsArticle">
+          <div class="latest-item-content">
+            <!-- Article Thumbnail -->
+            {{#if feature_image}}
+              <div class="latest-item-thumb">
+                <img src="{{img_url feature_image size="s"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" loading="lazy" itemprop="image">
+              </div>
+            {{else}}
+              <div class="latest-item-thumb no-image">
+                <div class="thumb-placeholder"></div>
+              </div>
+            {{/if}}
+            
+            <!-- Article Main Content -->
+            <div class="latest-item-main">
+              <div class="latest-item-header">
+                {{#if primary_tag}}
+                  <span class="latest-item-tag tag-outline" data-tag="{{primary_tag.slug}}">
+                    {{#match primary_tag.slug "newsletters"}}🤙 LATEST VIBES{{/match}}
+                    {{#match primary_tag.slug "eats"}}🍟 EATS{{/match}}
+                    {{#match primary_tag.slug "events"}}📆 EVENTS{{/match}}
+                    {{#match primary_tag.slug "curators"}}👋 CURATORS{{/match}}
+                    {{#match primary_tag.slug "news"}}📰 NEWS{{/match}}
+                    {{#match primary_tag.slug "culture"}}🎭 CULTURE{{/match}}
+                    {{#match primary_tag.slug "business"}}💼 BUSINESS{{/match}}
+                    {{#match primary_tag.slug "community"}}🏘️ COMMUNITY{{/match}}
+                    {{#match primary_tag.slug "entertainment"}}🎪 ENTERTAINMENT{{/match}}
+                    {{#match primary_tag.slug "health"}}💚 HEALTH{{/match}}
+                    {{#match primary_tag.slug "tech"}}💻 TECH{{/match}}
+                    {{#match primary_tag.slug "art"}}🎨 ART{{/match}}
+                    {{#unless primary_tag.slug}}📝 {{primary_tag.name}}{{/unless}}
+                  </span>
+                {{else}}
+                  <span class="latest-item-tag tag-outline" data-tag="general">
+                    📝 GENERAL
+                  </span>
+                {{/if}}
+                <time class="latest-item-date" datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
+                  {{date published_at format="MMM D, YYYY"}}
+                </time>
+              </div>
+              
+              <h4 class="latest-item-title title-highlighted" itemprop="headline">
+                <a href="{{url}}" itemprop="url">{{title}}</a>
+              </h4>
+              
+              <p class="latest-item-excerpt" itemprop="description">{{excerpt words="36"}}</p>
+              
+              <div class="latest-item-meta">
+                <a href="{{url}}" class="more-link" itemprop="url">
+                  <span class="more-text">MORE</span>
+                  <span class="more-arrow">→</span>
+                </a>
+              </div>
+
+              <!-- Enhanced Schema.org for CurationsLA as Premier LA Publication -->
+              <div style="display: none;" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <span itemprop="name">CurationsLA</span>
+                <span itemprop="url">https://la.curations.cc</span>
+                <span itemprop="sameAs">https://twitter.com/curationsla</span>
+                <span itemprop="sameAs">https://instagram.com/curationsla</span>
+                <span itemprop="sameAs">https://threads.net/@curationsla</span>
+                <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                  <span itemprop="url">https://la.curations.cc/assets/icons/la-icon-512.png</span>
+                  <span itemprop="width">512</span>
+                  <span itemprop="height">512</span>
+                </div>
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                  <span itemprop="addressLocality">Los Angeles</span>
+                  <span itemprop="addressRegion">CA</span>
+                  <span itemprop="addressCountry">US</span>
+                </div>
+                <span itemprop="foundingDate">2019</span>
+                <span itemprop="areaServed">Los Angeles Metropolitan Area</span>
+                <div itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+                  <span itemprop="contactType">editorial</span>
+                  <span itemprop="email">hello@curations.cc</span>
+                </div>
+              </div>
+              {{#if primary_author}}
+                <div style="display: none;" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                  <span itemprop="name">{{primary_author.name}}</span>
+                  {{#if primary_author.url}}<span itemprop="url">{{primary_author.url}}</span>{{/if}}
+                </div>
+              {{/if}}
+              <span style="display: none;" itemprop="dateModified">{{date updated_at format="YYYY-MM-DD"}}</span>
+              <span style="display: none;" itemprop="articleSection">{{#if primary_tag}}{{primary_tag.name}}{{else}}Los Angeles News{{/if}}</span>
+              <span style="display: none;" itemprop="inLanguage">en-US</span>
+              <div style="display: none;" itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage">
+                <span itemprop="@id">{{url absolute="true"}}</span>
+              </div>
+              <span style="display: none;" itemprop="keywords">Los Angeles, {{#if primary_tag}}{{primary_tag.name}}, {{/if}}community, local news, good vibes</span>
+            </div>
+          </div>
+        </article>
+      {{/foreach}}
+    </div>
+
+    {{pagination}}
+  </section>
+
+  {{!-- Enhanced Post Navigation Section --}}
+  <section class="home-section post-navigation">
+    <div class="navigation-container">      
+      <div class="navigation-grid">
+        {{!-- Newer Posts Box --}}
+        {{#if pagination.prev}}
+          <div class="nav-box nav-box--newer">
+            <div class="nav-box-header">
+              <span class="nav-emoji">⬆️</span>
+              <span class="nav-label">NEWER POSTS</span>
+            </div>
+            <p class="nav-description">Fresh {{tag.name}} content from LA</p>
+            <a href="{{pagination.prev}}" class="nav-button">
+              <span class="nav-button-text">READ NEWER</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </div>
+        {{/if}}
+        
+        {{!-- Older Posts Box --}}
+        {{#if pagination.next}}
+          <div class="nav-box nav-box--older">
+            <div class="nav-box-header">
+              <span class="nav-emoji">⬇️</span>
+              <span class="nav-label">OLDER POSTS</span>
+            </div>
+            <p class="nav-description">Dive deeper into {{tag.name}} archives</p>
+            <a href="{{pagination.next}}" class="nav-button">
+              <span class="nav-button-text">EXPLORE ARCHIVE</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </section>
+
+</main>

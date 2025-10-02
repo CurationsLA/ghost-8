@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+*.log
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archive files (keep the original zip but exclude extracted duplicates)
+# Note: We'll keep Ghost-8-Purple-Vibes-1.0.zip as it's the source archive

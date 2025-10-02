@@ -1,0 +1,128 @@
+{{!< default}}
+
+<main class="site-main post-main">
+  {{#post}}
+  <!-- Article Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{title}}",
+    "datePublished": "{{date published_at format="YYYY-MM-DD"}}",
+    "dateModified": "{{date updated_at format="YYYY-MM-DD"}}",
+    "mainEntityOfPage": "{{url absolute="true"}}",
+    "author": {
+      "@type": "Organization",
+      "name": "CURATIONS"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CURATIONSLA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
+    }{{#if feature_image}},
+    "image": "{{feature_image}}"{{/if}}{{#if excerpt}},
+    "description": "{{excerpt}}"{{/if}}
+  }
+  </script>
+  
+  <article class="post-full framed-article {{post_class}}" data-post-id="{{id}}">
+    <header class="post-header-frame">
+      <h1 class="post-full-title">
+        {{#if title}}{{title}}{{else}}[untitled draft]{{/if}}
+      </h1>
+      <div class="post-full-meta">
+        <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="MMMM D, YYYY"}}</time>
+
+        {{#if primary_tag}}
+          <span class="latest-item-tag">
+            {{#match primary_tag.slug "newsletters"}}🤙 {{/match}}
+            {{#match primary_tag.slug "eats"}}🍟 {{/match}}
+            {{#match primary_tag.slug "events"}}📆 {{/match}}
+            {{#match primary_tag.slug "curators"}}👋 {{/match}}
+            {{primary_tag.name}}
+          </span>
+        {{/if}}
+
+        {{#if authors}}
+          {{#foreach authors}}
+            <span class="post-author">{{name}}</span>
+          {{/foreach}}
+        {{/if}}
+      </div>
+    </header>
+
+    {{#if feature_image}}
+      <figure class="post-feature-frame">
+        <img src="{{feature_image}}" alt="{{title}}">
+      </figure>
+    {{/if}}
+
+    <div class="post-body-frame">
+      <div class="post-content" data-original="true">
+
+        {{content}}
+
+        {{!-- Example manual section anchors (edit in content or add automatically) --}}
+        {{!-- <div id="events" class="vf-section-anchor"></div> --}}
+
+      </div>
+
+      {{#if @custom.widgets_on_posts}}
+        <div class="post-widgets-holder hidden"></div>
+      {{/if}}
+
+      <section class="post-comments" aria-label="Comments">
+        {{ghost_comments}}
+      </section>
+    </div>
+  </article>
+  {{/post}}
+
+  {{!-- Post Navigation Section --}}
+  <section class="home-section post-navigation">
+    <div class="navigation-container">
+      <h2 class="navigation-title">
+        <span class="location-tag">KEEP</span>
+        <span class="headline-text">EXPLORING</span>
+      </h2>
+      
+      <div class="navigation-grid">
+        {{!-- Previous Post --}}
+        {{#prev_post}}
+          <div class="nav-box nav-box--prev">
+            <div class="nav-box-header">
+              <span class="nav-emoji">⬅️</span>
+              <span class="nav-label">PREVIOUS POST</span>
+            </div>
+            <p class="nav-description">{{title}}</p>
+            <a href="{{url}}" class="nav-button">
+              <span class="nav-button-text">READ PREVIOUS</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </div>
+        {{/prev_post}}
+        
+        {{!-- Next Post --}}
+        {{#next_post}}
+          <div class="nav-box nav-box--next">
+            <div class="nav-box-header">
+              <span class="nav-emoji">➡️</span>
+              <span class="nav-label">NEXT POST</span>
+            </div>
+            <p class="nav-description">{{title}}</p>
+            <a href="{{url}}" class="nav-button">
+              <span class="nav-button-text">READ NEXT</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </div>
+        {{/next_post}}
+      </div>
+    </div>
+  </section>
+
+</main>

@@ -1,0 +1,129 @@
+<!-- 🤙 NEWSLETTER CTA - Web vs Email Divider -->
+<section class="c-newsletter-cta">
+  <!-- Email version shows CTA to continue to website -->
+  <div class="email-cta-block">
+    <div class="cta-content">
+      <h3>🍟 Want more? Ready for deeper dives into Good Vibes?</h3>
+      <div class="cta-button-container">
+        <a href="{{@site.url}}/{{slug}}" class="continue-cta-button">
+          <strong>CONTINUE TO EATS & MORE →</strong>
+        </a>
+      </div>
+      <p class="cta-note"><em>This CTA only appears in newsletter version - web version shows all content</em></p>
+    </div>
+  </div>
+  
+  <!-- Web version hides the CTA -->
+  <div class="web-continue-marker">
+    <!-- This section is hidden on web, shown in email -->
+    <hr class="section-divider">
+  </div>
+</section>
+
+<style>
+/* Newsletter CTA Styling */
+.c-newsletter-cta {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.email-cta-block {
+  background: linear-gradient(135deg, #ebf998 0%, #e2f263 100%);
+  border: 4px solid #000;
+  border-radius: 0;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  box-shadow: 0 4px 0 #000;
+}
+
+.cta-content h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #000;
+  line-height: 1.3;
+}
+
+.continue-cta-button {
+  display: inline-block;
+  background: #000;
+  color: #ebf998;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  border: 0;
+  border-radius: 0;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 0 #333;
+}
+
+.continue-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #333;
+  color: #ebf998;
+  text-decoration: none;
+}
+
+.cta-note {
+  margin: 1rem 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.web-continue-marker {
+  display: none; /* Hidden by default */
+}
+
+.section-divider {
+  border: 0;
+  height: 2px;
+  background: #e2f263;
+  margin: 1rem 0;
+}
+
+/* Web-specific styles */
+@media screen {
+  /* Hide email CTA on web */
+  .email-cta-block {
+    display: none;
+  }
+  
+  /* Show divider on web */
+  .web-continue-marker {
+    display: block;
+  }
+}
+
+/* Email-specific styles */
+@media not screen {
+  /* Show email CTA in email clients */
+  .email-cta-block {
+    display: block;
+  }
+  
+  /* Hide divider in email */
+  .web-continue-marker {
+    display: none;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .email-cta-block {
+    padding: 1.5rem 1rem;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .continue-cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+</style>

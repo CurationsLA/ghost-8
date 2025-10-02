@@ -1,0 +1,27 @@
+<div class="c-section-card">
+  <h2 class="c-section-card__header">
+    <span class="c-section-card__emoji">🏈</span>
+    <span class="c-section-card__title">SPORTS</span>
+  </h2>
+  <div class="c-section-card__body">
+    <p>Insert SPORTS content here.</p>
+  </div>
+  {{#if sports_links}}
+    <div class="c-section-card__links">
+      <table class="c-link-table">
+        <thead>
+          <tr>
+            <th>SPORTS LINKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#foreach sports_links}}
+            <tr>
+              <td><a href="{{url}}">{{title}}</a></td>
+            </tr>
+          {{/foreach}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
+</div>

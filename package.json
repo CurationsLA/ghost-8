@@ -1,0 +1,64 @@
+{
+  "name": "curationsla",
+  "description": "CURATIONSLA - Good Vibes × Hyper-Local LA Culture Newsletter Theme",
+  "version": "8.2.0-complete-purple",
+  "engines": {
+    "ghost": ">=6.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "CURATIONS × GARRETT NOVA",
+    "email": "hello@curations.cc",
+    "url": "https://la.curations.cc"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme",
+    "newsletter",
+    "curationsla",
+    "local-news",
+    "google-news",
+    "search",
+    "brutalist",
+    "lime",
+    "weather-widget",
+    "article-mastery",
+    "list-design",
+    "ghost-6",
+    "activitypub"
+  ],
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xs": { "width": 160 },
+      "s": { "width": 320 },
+      "m": { "width": 600 },
+      "l": { "width": 960 },
+      "xl": { "width": 1200 },
+      "xxl": { "width": 2000 }
+    },
+    "card_assets": true,
+    "custom": {
+      "accent_color": {
+        "type": "color",
+        "default": "#ebf998"
+      },
+      "newsletter_style": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable newsletter-style layout"
+      },
+      "widgets_on_posts": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show compact utilities widgets on posts"
+      },
+      "enhanced_animations": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable enhanced animations and transitions"
+      }
+    }
+  }
+}
