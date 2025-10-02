@@ -1,0 +1,3 @@
+export function debounce(fn,wait){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn.apply(this,a),wait);};}
+export function escapeHTML(s){return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+export function formatDate(str){try{return new Date(str).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch{return str;}}

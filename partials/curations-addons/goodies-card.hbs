@@ -1,0 +1,27 @@
+<div class="c-section-card">
+  <h2 class="c-section-card__header">
+    <span class="c-section-card__emoji"></span>
+    <span class="c-section-card__title">GOODIES</span>
+  </h2>
+  <div class="c-section-card__body">
+    <p>Insert GOODIES content here.</p>
+  </div>
+  {{#if goodies_links}}
+    <div class="c-section-card__links">
+      <table class="c-link-table">
+        <thead>
+          <tr>
+            <th>GOODIES LINKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#foreach goodies_links}}
+            <tr>
+              <td><a href="{{url}}">{{title}}</a></td>
+            </tr>
+          {{/foreach}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
+</div>

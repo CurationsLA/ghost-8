@@ -1,0 +1,44 @@
+<!-- 💰 SPONSOR CARD - Featured Sponsor Block -->
+<section class="c-section-box sponsor-box">
+  <header class="c-section-header sponsor-header">
+    <h3>💰 <strong>SPONSOR TEMPLATE</strong></h3>
+  </header>
+  
+  <div class="c-section-body sponsor-body">
+    <div class="sponsor-content">
+      <h4 class="sponsor-name">{{#if sponsor_name}}{{sponsor_name}}{{else}}[Sponsor Name]{{/if}}</h4>
+      
+      <p class="sponsor-description">
+        {{#if sponsor_description}}
+          {{sponsor_description}}
+        {{else}}
+          [Brief sponsor description and value proposition that provides authentic value to CurationsLA readers]
+        {{/if}}
+      </p>
+
+      <div class="sponsor-value">
+        <p class="why-we-love">
+          <strong>Why We Love Them:</strong> 
+          {{#if sponsor_endorsement}}
+            {{sponsor_endorsement}}
+          {{else}}
+            [Authentic endorsement explaining sponsor's alignment with CurationsLA values and community]
+          {{/if}}
+        </p>
+      </div>
+
+      <div class="sponsor-cta">
+        <a href="{{#if sponsor_url}}{{sponsor_url}}{{else}}#{{/if}}" 
+           target="_blank" 
+           rel="noopener sponsored" 
+           class="sponsor-button">
+          {{#if sponsor_cta}}{{sponsor_cta}}{{else}}Learn More{{/if}} →
+        </a>
+      </div>
+
+      <p class="sponsor-disclaimer">
+        <em>{{#if sponsor_offer}}{{sponsor_offer}}{{else}}[Special offer or call-to-action details]{{/if}}</em>
+      </p>
+    </div>
+  </div>
+</section>

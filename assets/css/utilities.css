@@ -1,0 +1,10 @@
+.no-scroll{overflow:hidden;}
+.section-back-up:hover{background:var(--lime);color:#000;}
+.vf-search-close, .site-icon-btn{cursor:pointer;}
+@media (max-width:760px){
+  .latest-item{padding:1.3rem 1.25rem 1.35rem;}
+  .post-body-frame{padding:1.6rem 1.3rem 1.8rem;}
+}
+@media (max-width:560px){
+  .post-body-frame{padding:1.35rem 1rem 1.55rem;}
+}

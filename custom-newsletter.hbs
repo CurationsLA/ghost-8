@@ -1,0 +1,45 @@
+{{!< default}}
+{{#post}}
+<article class="newsletter-article framed-article {{post_class}}">
+  <header class="post-header-frame">
+    <h1 class="post-full-title">{{title}}</h1>
+    <div class="post-full-meta">
+      <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="MMMM D, YYYY"}}</time>
+      {{#if primary_tag}}<span class="latest-item-tag">{{primary_tag.name}}</span>{{/if}}
+    </div>
+  </header>
+  <div class="post-body-frame">
+    <div class="post-content">
+      {{> "curations-addons/gif-card" image_url="https://placehold.co/600x300/ebf998/ebf998" text_above="Centered text above GIF" text_below="Centered text below GIF"}}
+
+      {{> "curations-addons/hov-lanes-card"}}
+
+      {{> "curations-addons/sponsor-card"}}
+
+      {{> "curations-addons/cta-card"}}
+
+      <div id="eats">
+        {{> "curations-addons/eats-card"}}
+      </div>
+
+      {{> "curations-addons/events-card"}}
+
+      {{> "curations-addons/business-card"}}
+
+      {{> "curations-addons/development-card"}}
+
+      {{> "curations-addons/entertainment-card"}}
+
+      {{> "curations-addons/sports-card"}}
+
+      {{> "curations-addons/community-card"}}
+
+      {{> "curations-addons/goodies-card"}}
+
+      {{{content}}}
+
+      {{> "curations-addons/gif-card" image_url="https://placehold.co/600x150/ebf998/ebf998" text_below="A friendly sendoff!"}}
+    </div>
+  </div>
+</article>
+{{/post}}

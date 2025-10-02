@@ -1,0 +1,67 @@
+<div class="c-section-card">
+  <h2 class="c-section-card__header">
+    <span class="c-section-card__emoji">🥳️</span>
+    <span class="c-section-card__title">EVENTS</span>
+  </h2>
+  <div class="c-section-card__body">
+    <div class="event-table-wrapper">
+      <table class="event-table">
+        <caption class="visually-hidden">Today's Events</caption>
+        <thead>
+          <tr>
+            <th scope="col" colspan="4">TODAY'S EVENTS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="event-time"><strong>00:00PM</strong></td>
+            <td>🎟️</td>
+            <td class="event-name"><mark><strong>EVENT NAME</strong></mark></td>
+            <td>[EVENT DESCRIPTION] <a href="#">[VENUE NAME]</a></td>
+          </tr>
+          <tr>
+            <td class="event-time"><strong>00:00PM</strong></td>
+            <td>🎟️</td>
+            <td class="event-name"><mark><strong>EVENT NAME</strong></mark></td>
+            <td>[EVENT DESCRIPTION] <a href="#">[VENUE NAME]</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="event-table">
+        <caption class="visually-hidden">Tomorrow's Events</caption>
+        <thead>
+          <tr>
+            <th scope="col" colspan="4">TOMORROW'S EVENTS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="event-time"><strong>00:00PM</strong></td>
+            <td>🎟️</td>
+            <td class="event-name"><mark><strong>EVENT NAME</strong></mark></td>
+            <td>[EVENT DESCRIPTION] <a href="#">[VENUE NAME]</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{#if events_links}}
+    <div class="c-section-card__links">
+      <table class="c-link-table">
+        <thead>
+          <tr>
+            <th>EVENTS LINKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#foreach events_links}}
+            <tr>
+              <td><a href="{{url}}">{{title}}</a></td>
+            </tr>
+          {{/foreach}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
+</div>

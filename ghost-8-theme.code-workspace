@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "name": "Ghost-8 Purple Vibes Theme",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.hbs": "handlebars"
+    },
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "files.exclude": {
+      ".git": true,
+      "node_modules": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/*.zip": true,
+      "**/assets/built": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "andrejunges.handlebars",
+      "vscode-icons-team.vscode-icons",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}

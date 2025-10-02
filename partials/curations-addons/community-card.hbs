@@ -1,0 +1,27 @@
+<div class="c-section-card">
+  <h2 class="c-section-card__header">
+    <span class="c-section-card__emoji"></span>
+    <span class="c-section-card__title">COMMUNITY</span>
+  </h2>
+  <div class="c-section-card__body">
+    <p>Insert COMMUNITY content here.</p>
+  </div>
+  {{#if community_links}}
+    <div class="c-section-card__links">
+      <table class="c-link-table">
+        <thead>
+          <tr>
+            <th>COMMUNITY LINKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#foreach community_links}}
+            <tr>
+              <td><a href="{{url}}">{{title}}</a></td>
+            </tr>
+          {{/foreach}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
+</div>

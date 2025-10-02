@@ -1,0 +1,109 @@
+<!-- 🚦 TRAFFIC Card - Live Traffic Updates -->
+<section class="c-section-box traffic-box" id="traffic">
+  <header class="c-section-header">
+    <h3>🚦 <strong>TRAFFIC LIVE VIEW</strong></h3>
+  </header>
+  
+  <div class="c-section-body">
+    <!-- LIVE TRAFFIC DATA (WEB ONLY) -->
+    <div class="traffic-live-data" id="traffic-live-container">
+      <div class="traffic-alerts">
+        <h4>🚧 Current Conditions</h4>
+        <div class="alerts-grid" id="live-traffic-grid">
+          {{#if traffic_alerts}}
+            {{#foreach traffic_alerts}}
+              <div class="traffic-item {{status_class}}">
+                <div class="traffic-route">
+                  <span class="route-name">{{route}}</span>
+                  <span class="traffic-status {{status}}">{{status_text}}</span>
+                </div>
+                <p class="traffic-description">{{description}}</p>
+                {{#if estimated_delay}}
+                  <p class="traffic-delay">⏱️ Estimated delay: {{estimated_delay}}</p>
+                {{/if}}
+              </div>
+            {{/foreach}}
+          {{else}}
+            <div class="traffic-item loading">
+              <p>Loading live traffic conditions...</p>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+
+      <!-- QUICK ROUTE STATUS -->
+      <div class="route-status">
+        <h4>🛣️ Major Routes</h4>
+        <div class="routes-grid">
+          <div class="route-card">
+            <span class="route-number">405</span>
+            <span class="route-status" id="route-405">Checking...</span>
+          </div>
+          <div class="route-card">
+            <span class="route-number">101</span>
+            <span class="route-status" id="route-101">Checking...</span>
+          </div>
+          <div class="route-card">
+            <span class="route-number">110</span>
+            <span class="route-status" id="route-110">Checking...</span>
+          </div>
+          <div class="route-card">
+            <span class="route-number">10</span>
+            <span class="route-status" id="route-10">Checking...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMAIL FALLBACK -->
+    <div class="traffic-email-fallback">
+      <p><strong>🚦 Current Traffic Status:</strong></p>
+      <p>For live traffic updates and route conditions, visit our website for the most current information.</p>
+      <p><strong>Pro Tip:</strong> Check Waze or Google Maps for real-time navigation assistance.</p>
+    </div>
+
+    <!-- LINKS TABLE -->
+    <div class="c-links-footer">
+      <table class="c-links-table traffic-links-table">
+        <thead>
+          <tr>
+            <th><strong>TRAFFIC RESOURCES</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#if traffic_links}}
+            {{#foreach traffic_links}}
+              <tr>
+                <td><a href="{{url}}" target="_blank" rel="noopener">{{title}}</a></td>
+              </tr>
+            {{/foreach}}
+          {{else}}
+            <tr><td><a href="https://go511.com" target="_blank" rel="noopener">SoCal 511 Traffic</a></td></tr>
+            <tr><td><a href="https://www.sigalert.com" target="_blank" rel="noopener">SigAlert LA</a></td></tr>
+            <tr><td><a href="https://www.metro.net" target="_blank" rel="noopener">Metro Alerts</a></td></tr>
+            <tr><td><a href="https://waze.com" target="_blank" rel="noopener">Waze Traffic</a></td></tr>
+          {{/if}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Web-only script for live traffic data -->
+<script type="text/javascript">
+// Only load for web, not email
+if (typeof window !== 'undefined' && window.location) {
+  document.addEventListener('DOMContentLoaded', function() {
+    // Hide email fallback for web version
+    const emailFallback = document.querySelector('.traffic-email-fallback');
+    if (emailFallback) {
+      emailFallback.style.display = 'none';
+    }
+    
+    // Check if traffic API JS is available
+    if (typeof initTrafficData === 'function') {
+      initTrafficData('traffic-live-container');
+    }
+  });
+}
+</script>
